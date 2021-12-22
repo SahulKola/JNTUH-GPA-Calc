@@ -1,0 +1,36 @@
+{% extends '_dashboard.html' %}
+{% block head %}
+<title> Target GPA Calc | JNTUH GPA Calc </title>
+<link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+{% endblock %}
+{% block body %}
+<main class="container">
+    <h2>Target GPA Calc</h2>
+
+    <div class="table-contents mt-5">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="7.55">
+            <label for="floatingInput">Current GPA</label>
+        </div>
+        <div class="form-floating mb-3">
+            <select class="form-select" id="select">
+                <option selected>Current Year & Semester </option>
+                <option value="1">I Year - I Semester</option>
+                <option value="1">I Year - II Semester</option>
+                <option value="1">II Year - I Semester</option>
+                <option value="1">II Year - II Semester</option>
+                <option value="1">III Year - I Semester</option>
+                <option value="1">III Year - II Semester</option>
+                <option value="1">IV Year - I Semester</option>
+                <option value="1">IV Year - II Semester</option>
+            </select>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="8.0">
+            <label for="floatingPassword">Goal GPA</label>
+        </div>
+        <button id="calc">Calculate</button>
+        <p id="cgpa" class="mt"> To reach your goal, your avg. GPA for your next <b> 10 </b> Semesters must be <span> 10.16 </span></p>
+    </div>
+</main>
+{% endblock %}

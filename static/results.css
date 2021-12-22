@@ -1,0 +1,50 @@
+
+.container {
+    overflow: scroll;
+}
+
+.results-content {
+    padding: 25px;
+    margin-left: 25px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    transition: all 0.5s ease-in-out;
+    font-size: 18px;
+}
+
+.block img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+
+.block p {
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+.block:hover {
+    margin-left: 15px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+  ::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+  ::-webkit-scrollbar-thumb {
+  background: #888; 
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  
+  background: #555; 
+}

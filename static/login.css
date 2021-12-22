@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=PT+Sans:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    background: #fff;
+}
+
+.containter {
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    padding: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 420px;
+    padding: 25px;
+}
+
+.logo>img {
+    width: 350px;
+}
+input[type="text"],input[type="email"],input[type="password "] {
+    background: rgba(255,255,255,0.5) !important;
+}
+.text {
+    position: absolute;
+    right: 100px;
+    top: 80px;
+}
+
+#main-title {
+    line-height: 50px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+.d-grid>button {
+    font-weight: bold;
+    background: #333 !important;
+    border: 3px solid #333 !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.d-grid>button:hover {
+    box-shadow: -6px 8px 13px -6px rgba(0,0,0,0.75);
+-webkit-box-shadow: -6px 8px 13px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: -6px 8px 13px -6px rgba(0,0,0,0.75);
+    font-weight: bold;
+    color: #333 !important;
+    border: 3px solid #333 !important;
+    background: none !important;
+    transition: all 0.25s ease-in-out;
+}
+
+#center {
+    margin-bottom: 15px !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+
+}
+.form-floating {
+    border-radius: 3px;box-shadow: 8px 9px 13px -6px rgba(0,0,0,0.75);
+-webkit-box-shadow: 8px 9px 13px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 8px 9px 13px -6px rgba(0,0,0,0.75);
+}
+input {
+   
+    font-weight: bold !important;
+}
+
+#bg-logo {
+    position: absolute;
+    z-index: -1;
+    right: 100px;
+    bottom: 10px;
+    opacity: 0.15;
+    width: 40%;
+}

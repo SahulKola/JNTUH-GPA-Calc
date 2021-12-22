@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+{% block head %}
+<title> Register | JNTUH GPA Calc </title>
+<link rel="stylesheet" href="{{ url_for('static',filename='login.css')}}">
+<link rel="stylesheet" href="{{ url_for('static',filename='register.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<div class="containter">
+
+    <div class="logo">
+        <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
+    </div>
+    <div class="login-box">
+        <div data-aos="zoom-in" data-aos-duration="750">
+            <p id="main-title">Sign up with your email</p>
+            <h6>Already have an Account ? <a href="/login"> Login </a> </h6>
+            <div class="form-floating mt-2">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Full Name</label>
+            </div>
+            <div class="form-floating mt-2">
+                <input type="email" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Email Address</label>
+            </div>
+            <div class="form-floating mt-2">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating mt-2">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">JNTUH Roll Number</label>
+            </div>
+            <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">I accept the <a href=""> Terms & Conditions
+                    </a></label>
+            </div>
+            <div class="d-grid gap-2 col-12">
+                <button class="btn btn-primary mt-3 mb-3 p-3" type="button">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <img src="{{url_for('static',filename='Images/Logo-Shadow.png')}}" alt="Logo" id="bg-logo">
+</section>
+
+{% endblock %}

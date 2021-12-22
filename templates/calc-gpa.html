@@ -1,0 +1,175 @@
+{% extends '_dashboard.html' %}
+{% block head %}
+<title> Results | JNTUH GPA Calc </title>
+<link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+{% endblock %}
+
+{% block body %}
+<main class="container">
+    <form action="" method="POST">
+        <div class="contents">
+            <select class="form-select-sm">
+                <option selected>Regulation</option>
+                <option value="1">R18</option>
+                <option value="2" disabled>R16</option>
+                <option value="3" disabled>R19</option>
+            </select>
+            <select class="form-select-sm">
+                <option selected>Year & Semester </option>
+                <option value="1">I Year - I Sem</option>
+                <option value="1">I Year - II Sem</option>
+                <option value="1">II Year - I Sem</option>
+                <option value="1">II Year - II Sem</option>
+                <option value="1">III Year - I Sem</option>
+                <option value="1">III Year - II Sem</option>
+                <option value="1">IV Year - I Sem</option>
+                <option value="1">IV Year - II Sem</option>
+            </select>
+            <button>Submit</button>
+        </div>
+    </form>
+    <p id="title"> B.Tech I Year - I Semester </p>
+    <table class="table table-bordered">    
+        <tbody>
+            <tr>
+                <th scope="row">Sl No.</th>
+                <th >Subject Name</th>
+                <th>Credits</th>
+                <th>Grade</th>
+                <th>Grade points</th>
+            </tr>
+            <tr>
+                <td scope="row">1</td>
+                <td id="left">ENGINEERING WORKSHOP</td>
+                <td>2.5</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">ENGINEERING CHEMISTRY LAB</td>
+                <td>1.5</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">ENGLISH LANGUAGE AND COMMUNICATION SKILLS LAB</td>
+                <td>1</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">BASIC ELECTRICAL ENGINEERING LAB</td>
+                <td>1</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">MATHEMATICS I</td>
+                <td>4</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">CHEMISTRY</td>
+                <td>4</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">2</td>
+                <td id="left">ENGLISH</td>
+                <td>2</td>
+                <td>
+                    <select class="form-select">
+                        <option selected>O</option>
+                        <option value="1">A+</option>
+                        <option value="1">A</option>
+                        <option value="1">B+</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="1">F</option>
+                        <option value="1">Ab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="bolder">
+                <td ></td>
+                <td id="left">TOTAL</td>
+                <td>19.0</td>
+                <td>
+                </td>
+                <td>143.5
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button>Calculate</button>
+    <p id="cgpa">Semester Grade Point Average (SGPA) : <span>7.55</span> / 10</p>
+
+</main>
+{% endblock %}
