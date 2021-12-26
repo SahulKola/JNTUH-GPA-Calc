@@ -2,35 +2,47 @@
 {% block head %}
 <title> Target GPA Calc | JNTUH GPA Calc </title>
 <link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+<link rel="stylesheet" href="{{ url_for('static',filename='confetti.css')}}">
+
 {% endblock %}
 {% block body %}
 <main class="container">
     <h2>Target GPA Calc</h2>
 
     <div class="table-contents mt-5">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="7.55">
-            <label for="floatingInput">Current GPA</label>
+        <form action="/target-gpa" method="POST">
+            <div class="form-floating mb-3">
+                <input type="number" step="0.01" class="form-control" name="gpa" id="floatingInput" placeholder="7.55" required>
+                <label for="floatingInput">Current GPA</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" name="sem" id="select" required>
+                    <option value="" selected>Current Year & Semester </option>
+                    <option value="1">I Year - I Semester</option>
+                    <option value="2">I Year - II Semester</option>
+                    <option value="3">II Year - I Semester</option>
+                    <option value="4">II Year - II Semester</option>
+                    <option value="5">III Year - I Semester</option>
+                    <option value="6">III Year - II Semester</option>
+                    <option value="7">IV Year - I Semester</option>
+                    <option value="8">IV Year - II Semester</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" step="0.01" name="tgpa" class="form-control" id="floatingPassword" placeholder="8.0" required>
+                <label for="floatingPassword">Goal GPA</label>
+            </div>
+            <button id="calc" type="submit" name="submit">Calculate</button>
+        </form>
+        <p id="cgpa" class="{{ indi }}">{{ text }}</p>
+        <p id="cgpa" class="mt hidden {{indicator}}">To reach your goal, your avg. GPA for your next <b> {{ rem }} </b>
+            Semester(s) must be <span>{{ avggpa }}</span></p>
+    </div>
+    <div class="hide {{tvisibility}}">
+        <div class="tgpa-confetti">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_u4yrau.json" background="transparent"
+                speed="1" style="width: 350px; height: 350px;" loop autoplay></lottie-player>
         </div>
-        <div class="form-floating mb-3">
-            <select class="form-select" id="select">
-                <option selected>Current Year & Semester </option>
-                <option value="1">I Year - I Semester</option>
-                <option value="1">I Year - II Semester</option>
-                <option value="1">II Year - I Semester</option>
-                <option value="1">II Year - II Semester</option>
-                <option value="1">III Year - I Semester</option>
-                <option value="1">III Year - II Semester</option>
-                <option value="1">IV Year - I Semester</option>
-                <option value="1">IV Year - II Semester</option>
-            </select>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="8.0">
-            <label for="floatingPassword">Goal GPA</label>
-        </div>
-        <button id="calc">Calculate</button>
-        <p id="cgpa" class="mt"> To reach your goal, your avg. GPA for your next <b> 10 </b> Semesters must be <span> 10.16 </span></p>
     </div>
 </main>
 {% endblock %}

@@ -6,28 +6,34 @@
 
 {% block body %}
 <div class="containter">
-    <div class="logo">
-        <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
-    </div>
+    <a href="/">
+        <div class="logo">
+            <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
+        </div>
+    </a>
     <div class="text">
         <p>Don't have an account ? <a href="/register">Create account</a></p>
     </div>
+    <P class="link-{{indicator}}" id="alert">{{alert}}</P>
     <div class="login-box">
         <div data-aos="zoom-in" data-aos-duration="750">
             <p id="main-title">Hello, <br> Welcome Back </p>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-            <div class="d-grid gap-2 col-12">
-                <button class="btn btn-primary mt-3 mb-3 p-3" type="button">Login</button>
-            </div>
-            <a href="/forgot" class="link-dark" id="center">Forgot Password ?</a>
-
+            <form action="/loginauth" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" name="email" required
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" name="password" required
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="d-grid gap-2 col-12">
+                    <button class="btn btn-primary mt-3 mb-3 p-3" type="submit">Login</button>
+                </div>
+            </form>
+            <a href="/termsandconditions" class="link-dark" id="center">Forgot Password ?</a>
         </div>
     </div>
 </div>

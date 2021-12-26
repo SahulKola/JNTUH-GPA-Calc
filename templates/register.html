@@ -9,37 +9,49 @@
 
 <div class="containter">
 
-    <div class="logo">
-        <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
-    </div>
+    <a href="/">
+        <div class="logo">
+            <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
+        </div>
+    </a>
+    <P class="link-{{indicator}}" id="alert">{{alert}}</P>
+
     <div class="login-box">
+
         <div data-aos="zoom-in" data-aos-duration="750">
             <p id="main-title">Sign up with your email</p>
             <h6>Already have an Account ? <a href="/login"> Login </a> </h6>
-            <div class="form-floating mt-2">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Full Name</label>
-            </div>
-            <div class="form-floating mt-2">
-                <input type="email" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Email Address</label>
-            </div>
-            <div class="form-floating mt-2">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-            <div class="form-floating mt-2">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">JNTUH Roll Number</label>
-            </div>
-            <div class="form-check form-switch mt-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">I accept the <a href=""> Terms & Conditions
-                    </a></label>
-            </div>
-            <div class="d-grid gap-2 col-12">
-                <button class="btn btn-primary mt-3 mb-3 p-3" type="button">Register</button>
-            </div>
+            <form action="/registerdata" method="POST">
+                <div class="form-floating mt-2">
+                    <input type="text" class="form-control" id="floatingInput" name="name" required
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Full Name</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <input type="email" class="form-control" id="floatingPassword" name="email" required
+                        placeholder="Email">
+                    <label for="floatingPassword">Email Address</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <input type="password" class="form-control" id="floatingPassword" name="password" required
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <input type="text" class="form-control" id="floatingPassword" name="rollno" required
+                        placeholder="Roll No">
+                    <label for="floatingPassword">JNTUH Roll Number</label>
+                </div>
+                <div class="form-check form-switch mt-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" required>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">I accept the <a
+                            href="/termsandconditions"> Terms &
+                            Conditions</a></label>
+                </div>
+                <div class="d-grid gap-2 col-12">
+                    <button class="btn btn-primary mt-3 mb-3 p-3" type="submit">Register</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

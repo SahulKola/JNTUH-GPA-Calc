@@ -9,112 +9,18 @@
 <main class="container">
     <h2>Results</h2>
     <div class="results-content">
+        {% for result in results %}
+        <a href="{{ result.1 }}" target="_blank">
+            <div class="block">
+                <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
+                <p>{{ result.2 }}</p>
+                <h6>{{ result.3 }}</h6>
+            </div>
+        </a>
+        {% endfor %}
 
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
-        <div class="block">
-            <img src="{{url_for('static',filename='Images/startup.png')}}" alt="Rocket">
-            <p>B.Tech I Year I Semester (R18) Regular Examinations Results</p>
-            <p>16-FEB-2019</p>
-        </div>
+    </div>
+
     </div>
 </main>
 {% endblock %}

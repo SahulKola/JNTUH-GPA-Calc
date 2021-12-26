@@ -6,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
-    overflow: hidden;
 }
 
 body {
@@ -101,4 +100,19 @@ input {
     bottom: 10px;
     opacity: 0.15;
     width: 40%;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none !important;
+    box-shadow:none !important;
+}
+
+#alert {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.site-title {
+    position: relative;
+    top: 350px !important;
 }

@@ -1,0 +1,36 @@
+.visible {
+        display: visible;
+
+}
+.hidden {
+    visibility: hidden;
+}
+.block {
+    display: block !important;
+}
+.hide {
+    display: none;
+}
+.confetti {
+    display: flex;
+    margin-top: -20px;
+    z-index: -1;
+    margin-left: -60px;
+    transform: scale(1.5);
+    overflow: hidden !important;
+}
+.success-confetti {
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+    transform:scaleX(-1);
+}
+.tgpa-confetti {
+    overflow-y: hidden;
+    position: absolute;
+    z-index: -1;
+    top: 20%;
+    left: 38%;
+    transform: translate(-50%,-50%);
+    transform:scale(3);
+}
