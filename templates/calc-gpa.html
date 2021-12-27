@@ -1,6 +1,6 @@
 {% extends '_dashboard.html' %}
 {% block head %}
-<title> Results | JNTUH GPA Calc </title>
+<title> Calc GPA | JNTUH GPA Calc </title>
 <link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
 <link rel="stylesheet" href="{{ url_for('static',filename='confetti.css')}}">
 {% endblock %}
@@ -9,7 +9,7 @@
 <main class="container">
     <form action="/fetch-subjects" method="POST">
         <div class="contents">
-            <select class="form-select-sm" name="reg" required>
+            <select class="form-select-sm"  name="reg" required>
                 <option value="" selected>Regulation</option>
                 <option value="1">R18</option>
                 <option value="2" disabled>R16</option>
@@ -18,7 +18,7 @@
             <select class="form-select-sm" name="branch" required>
                 <option value="" selected>Branch</option>
                 <option value="1">CSE</option>
-                <option value="2" disabled>ECE</option>
+                <option value="2"disabled >ECE</option>
                 <option value="3" disabled>CIVIL</option>
             </select>
             <select class="form-select-sm" name="sem" required>
@@ -35,7 +35,7 @@
             <button type="submit">Submit</button>
         </div>
     </form>
-    <div class="table-content" style="display: none; display: {{ indicator }} !important;">
+    <div class="table-contents" style="display: none; display: {{ indicator }} !important;">
         <p id="title">B.Tech {{ semtitle }}</p>
         <form action="/calculate" method="POST">
             <table class="table table-bordered">
@@ -53,7 +53,7 @@
                         <td id="left">{{ result.3 }}</td>
                         <td>{{ result.4 }}</td>
                         <td id="zindex">
-                            <select class="form-select" name="s{{ result.0 }}" required>
+                            <select autofocus class="form-select" name="s{{ result.0 }}" required>
                                 <option selected value="">-</option>
                                 <option value="10">O</option>
                                 <option value="9">A+</option>
@@ -61,7 +61,7 @@
                                 <option value="7">B+</option>
                                 <option value="6">B</option>
                                 <option value="5">C</option>
-                                <option value="1">F</option>
+                                <option value="0">F</option>
                             </select>
                         </td>
                         <td>{{ gpoints[loop.index-1] }}</td>

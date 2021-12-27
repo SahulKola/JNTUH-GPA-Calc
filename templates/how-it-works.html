@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% block head %}
-<title> Login | JNTUH GPA Calc </title>
+<title> How It Works | JNTUH GPA Calc </title>
 <link rel="stylesheet" href="{{ url_for('static',filename='login.css')}}">
 <link rel="stylesheet" href="{{ url_for('static',filename='howto.css')}}">
 
@@ -9,9 +9,11 @@
 
 {% block body %}
 <div class="containter">
-    <a href="/"><div class="logo">
-        <img src="{{url_for('static',filename='Images/Logo-withtext.png')}}" alt="">
-    </div></a>
+    <a href="/">
+        <div class="logo">
+            <img src="{{url_for('static',filename='Images/Logo-withText.png')}}" alt="">
+        </div>
+    </a>
     <div class="content">
         <h3 class="center">How to Calculate SGPA & CGPA </h3>
         <h4 class="center">JNTU Hyderabad Computation of Grade Point Averagae </h4>
@@ -184,7 +186,7 @@
             <a href="/calc-gpa"> <button class="center mb-2" id="middle">Click Here to calculate your CGPA</button></a>
 
         </div>
-            <hr>
+        <hr>
 
     </div>
 </div>

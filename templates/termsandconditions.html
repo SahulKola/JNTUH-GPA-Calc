@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% block head %}
-<title> Register | JNTUH GPA Calc </title>
+<title> Coming Soon ! | JNTUH GPA Calc </title>
 <link rel="stylesheet" href="{{ url_for('static',filename='login.css')}}">
 <link rel="stylesheet" href="{{ url_for('static',filename='register.css')}}">
 {% endblock %}
@@ -9,17 +9,14 @@
 
 <div class="containter">
     <a href="/">
-    <div class="logo">
-           <img src="{{url_for('static',filename='Images/Logo-withText.png')}}" alt="Logo">
-    </div>
+        <div class="logo">
+            <img src="{{url_for('static',filename='Images/Logo-withText.png')}}" alt="Logo">
+        </div>
     </a>
-    <p class="link-{{indicator}}" id="alert">{{alert}}</p>
-
     <div class="login-box site-title">
-
         <div data-aos="zoom-in" data-aos-duration="750">
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player id="lottie" src="https://assets7.lottiefiles.com/packages/lf20_p3HYrw.json" mode="bounce"
+            <lottie-player id="lottie-t" src="https://assets7.lottiefiles.com/packages/lf20_p3HYrw.json" mode="bounce"
                 background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
             <p id="main-title">Site is temporarily unavailale.</p>
             <p>We'll be back shortly</p>

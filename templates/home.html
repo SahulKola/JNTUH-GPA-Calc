@@ -6,11 +6,12 @@
 {% endblock %}
 {% block body %}
 <main class="container" id="cont">
-    <div class="center hide {{adisplay}}">
-    <p id="bold">{{alert}}<span>({{rollno}})</span></p>
-    <p class="bolder">This Web Application allows you to calculate SGPA and CGPA, <br> It's Exclusively made for JNTUH affiliated students. <br> Feel free to use this resource.</p>
+    <div class="center hide {{adisplay}} responsive">
+        <p id="bold">{{alert}}<span>({{rollno}})</span></p>
+        <p class="bolder">This Web Application allows you to calculate SGPA and CGPA, <br> It's Exclusively made for
+            JNTUH affiliated students. <br> Feel free to use this resource.</p>
     </div>
-    <div class="hide {{bdisplay}}">
+    <div class="hide gpa-content {{bdisplay}}">
         <div class="year-wise">
             <h5>I YEAR</h5>
             <div class="grid-s">
@@ -43,7 +44,7 @@
         </div>
         <p id="cgpa">Cummulative Grade Point Average (CGPA) <span>{{ cgpa }}</span> / 10 </p>
     </div>
-    <div class="hide {{cvisibility}} ">
+    <div class="hide {{cvisibility}} overflow">
         <div class="confetti">
             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_lamra2gh.json" background="transparent"
                 speed="1" style="width: 600px; height: 500px;" loop autoplay></lottie-player>
@@ -52,8 +53,10 @@
         </div>
     </div>
     <div class="hide {{dvisibility}} ">
-        <div class="success-confetti">
-<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_mj35fmqa.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>        </div>
+        <div class="success-confetti scale">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_mj35fmqa.json" background="transparent"
+                speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        </div>
     </div>
 </main>
 {% endblock %}

@@ -4,8 +4,8 @@
     left: 50%;
     top: 55%;
     transform: translate(-50%, -50%);
-    width: 550px;
-    height: 520px;
+    max-width: 550px;
+    max-height: 520px;
     padding: 25px;
 }
 
@@ -53,4 +53,17 @@ input[type="checkbox"] {
 .form-check-label {
 font-size: 17px;
 line-height: 30px;
+}
+@media only screen and (max-width: 600px) {
+
+.login-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   }
+   
+#main-title {
+    font-size: 28px;
+}
 }

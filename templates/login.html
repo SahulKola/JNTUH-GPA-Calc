@@ -14,13 +14,14 @@
     <div class="text">
         <p>Don't have an account ? <a href="/register">Create account</a></p>
     </div>
-    <P class="link-{{indicator}}" id="alert">{{alert}}</P>
     <div class="login-box">
         <div data-aos="zoom-in" data-aos-duration="750">
             <p id="main-title">Hello, <br> Welcome Back </p>
+                   <P class="link-{{indicator}}" id="alert">{{alert}}</P>
+
             <form action="/loginauth" method="POST">
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" name="email" required
+                    <input autofocus type="email" class="form-control" id="floatingInput" name="email" required
                         placeholder="name@example.com">
                     <label for="floatingInput">Email address</label>
                 </div>

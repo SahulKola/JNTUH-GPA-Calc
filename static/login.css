@@ -26,8 +26,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 420px;
+    max-width: 500px;
+    max-height: 420px;
     padding: 25px;
 }
 
@@ -115,4 +115,60 @@ input {
 .site-title {
     position: relative;
     top: 350px !important;
+}
+@media only screen and (max-width: 600px) {
+.containter {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo>img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+}
+.login-box {
+    margin: 0;
+    width: 95%;
+
+}
+.text {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    top: 100px;  
+}
+#main-title {
+    line-height: 40px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+}
+#bg-logo {
+    position: fixed;
+    right:0px;
+    z-index: -1;
+    bottom: 0px;
+    opacity: 0.15;
+    width: 100%;
+}
+.site-title {
+    margin-top: 0px !important;
+}
+#lottie-t {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    z-index: -1;
+    margin-right: -200px;
+    padding: 0px !important;
+    margin: 0 auto !important;
+    transform: scale(0.7) !important;
+}
 }

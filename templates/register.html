@@ -14,16 +14,15 @@
             <img src="{{url_for('static',filename='Images/Logo-withText.png')}}" alt="Logo">
         </div>
     </a>
-    <P class="link-{{indicator}}" id="alert">{{alert}}</P>
 
     <div class="login-box">
-
+        <p class="link-{{indicator}}" id="alert">{{alert}}</p>
         <div data-aos="zoom-in" data-aos-duration="750">
             <p id="main-title">Sign up with your email</p>
             <h6>Already have an Account ? <a href="/login"> Login </a> </h6>
             <form action="/registerdata" method="POST">
                 <div class="form-floating mt-2">
-                    <input type="text" class="form-control" id="floatingInput" name="name" required
+                    <input autofocus type="text" class="form-control" id="floatingInput" name="name" required
                         placeholder="name@example.com">
                     <label for="floatingInput">Full Name</label>
                 </div>

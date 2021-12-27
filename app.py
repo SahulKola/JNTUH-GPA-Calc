@@ -4,6 +4,11 @@ import MySQLdb.cursors
 import re
 app = Flask(__name__)
 
+#app.config['MYSQL_HOST'] = 'localhost'
+ # app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = ''
+# app.config['MYSQL_DB'] = 'gpacalc'
+
 app.config['MYSQL_HOST'] = 'db4free.net'
 app.config['MYSQL_USER'] = 'gpacalc'
 app.config['MYSQL_PASSWORD'] = 'Candy@69'
@@ -24,7 +29,7 @@ def register():
 
 #--------------------------------------------------------------
 
-@app.route('/registerdata',methods=["POST"])
+@app.route('/registerdata',methods=["POST","GET"])
 def registerdata():
     if request.method == "POST":
         alert=""
@@ -63,7 +68,7 @@ def login():
     
 #--------------------------------------------------------------
 
-@app.route('/loginauth',methods=["POST"])
+@app.route('/loginauth',methods=["POST","GET"])
 def loginauth():
     if request.method == "POST":
         alert=""
@@ -167,7 +172,7 @@ def calcgpa():
 
 #--------------------------------------------------------------
 
-@app.route('/fetch-subjects',methods=["POST"])
+@app.route('/fetch-subjects',methods=["POST","GET"])
 def fetchsubjects():
     if 'id' in session and request.method == "POST":
         text = ""
@@ -178,7 +183,7 @@ def fetchsubjects():
         session['branch'] = branch
         session['sem'] = sem
         cursor = mysql.connection.cursor()
-        cursor.execute("SELECT * FROM SEMSUBJECTS WHERE SID = % s AND RID = % s",(sem,reg))
+        cursor.execute("SELECT * FROM SEMSUBJECTS WHERE SID = % s AND RID = % s",(sem,branch))
         results = cursor.fetchall()
         cursor.connection.commit()
         if sem==1:
@@ -206,9 +211,9 @@ def fetchsubjects():
 
 #--------------------------------------------------------------
 
-@app.route('/calculate',methods=["POST"])
+@app.route('/calculate',methods=["POST","GET"])
 def calculate():
-    if 'id' in session and request.method == "POST":
+    if 'id' in session:
         uid = session['id']
         if request.method == "POST":
             text = ""
