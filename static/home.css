@@ -198,6 +198,7 @@ table {
     text-align: center;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px !important;
+    border: 1px solid #000 !important;
     outline: none !important;
 }
 
@@ -353,6 +354,9 @@ i {
 @media only screen and (max-width: 600px) {
 
     /*DASHBOARD */
+    body {
+        width: 100vw;
+    }
 
     nav {
         position: relative;
@@ -360,23 +364,35 @@ i {
         width: 100%;
         height: 120px;
         z-index: 2;
-        top: 80px
+        top: 80px;
+        margin-right: 0 !important;
+        padding: 0 !important;
+
     }
 
     .links {
         position: relative;
         right: 0;
-        left: 25px;
+        width: 90%;
+        left: 15px;
         transform: translateY(-50%);
-        margin: 0 auto !important;
+    }
+
+    #bg {
+        position: absolute;
+        z-index: 2;
+        top: -100px;
+        width: 100vw;
+        height: 100px;
+        background: var(--accent-color);
     }
 
     .logo {
         position: absolute;
-        margin-top: -5px;
-        padding: 10px 120px;
-        top: -75px;
-        left: 38%;
+        margin-top: 10px;
+        top: -60px;
+        left: 50%;
+        z-index: 5;
         margin: 0px !important;
         transform: translateX(-50%);
         background: var(--accent-color);
@@ -455,40 +471,58 @@ i {
     }
 
     #title {
-        position: absolute;
+        position: relative;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        margin: 10px auto;
+        width: 90%;
+        padding: 0 !important;
+        margin: 0 !important;
         font-size: 18px;
-        text-align: center;
-        font-weight: bolder;
+        margin-right: 0px;
     }
+
     table {
-        margin-top: 0px;
+        margin-top: -50px;
         margin-left: -34px;
         transform: scale(0.8);
+        margin-bottom: 10px;
     }
-    table + button {
-        position: absolute;
-        margin-top: 200%;
-    }
-    .tgpa-width {
-        position: relative;
-        right: 65px;
-        width: 500px;
-        padding: 0 !important;
-    }
-    #t-id  {
-        margin-top: 100px;
-        margin-left: 15px;
-        font-size: 22px;
-    }
-    #calc {
+
+    table+button {
         position: absolute;
         left: 50%;
+        transform: translateX(-50%);
+        margin-top: 195%;
+        margin-bottom: 10%;
+    }
+
+    .tgpa-width {
+        position: absolute;
+        left: 30%;
+        width: 100vw;
+        transform: translateX(-50%);
+        padding: 0 !important;
+    }
+
+    #t-id {
+        margin-top: 100px;
+        margin-left: 15px;
+        padding: 0 !important;
+        font-size: 22px;
+    }
+    
+    #calc {
+        position: absolute;
+        left: 70%;
         margin-top: 180px;
         transform: translateX(-50%);
+    }
+
+    .form-floating>input {
+        width: 300px;
+    }
+    .form-select {
+        width: 300px;
     }
     .gpa-content {
         margin-top: 30px;

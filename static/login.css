@@ -123,6 +123,7 @@ input {
     height: 100vh;
     padding: 0 !important;
     left: 50%;
+    margin-top: 40px;
     transform: translateX(-50%);
 }
 
