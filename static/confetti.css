@@ -65,4 +65,14 @@
         bottom: -70px;
         transform: scale(0.7);
     }
+    
+.tgpa-confetti {
+    overflow-y: hidden;
+    position: absolute;
+    z-index: -1;
+    top: 20%;
+    left: 0px;
+    transform: scale(1);
+}
+
 }
