@@ -76,6 +76,30 @@ button:hover {
     transition: all 0.25s ease-in-out;
 
 }
+#dark-btn {
+    padding: 10px 30px;
+    font-weight: 500;
+    background: #333;
+    outline: none;
+    color: #efefef;
+    color: var(--primary-color);
+    transition: all 0.25s ease-in-out;
+
+}
+#dark-btn:hover {
+    padding: 10px 40px;
+    position: relative;
+    margin: 5px 5px;
+    border-radius: 30px;
+    font-size: 18px;
+    outline: none;
+    font-weight: bolder;
+    color: #333;
+    border: 2px solid #c7c7c7;
+    background: none;
+    transition: all 0.25s ease-in-out;
+
+}
 
 #homeimg {
     position: absolute;

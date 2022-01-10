@@ -9,7 +9,7 @@
 <main class="container">
     <form action="/fetch-subjects" method="POST">
         <div class="contents">
-            <select class="form-select-sm"  name="reg" required>
+            <select class="form-select-sm" name="reg" required>
                 <option value="" selected>Regulation</option>
                 <option value="1">R18</option>
                 <option value="2" disabled>R16</option>
@@ -17,9 +17,12 @@
             </select>
             <select class="form-select-sm" name="branch" required>
                 <option value="" selected>Branch</option>
-                <option value="1">CSE</option>
-                <option value="2"disabled >ECE</option>
-                <option value="3" disabled>CIVIL</option>
+                <option value="1">CIVIL</option>
+                <option value="2">EEE</option>
+                <option value="3">MECH</option>
+                <option value="4">ECE</option>
+                <option value="5">CSE</option>
+
             </select>
             <select class="form-select-sm" name="sem" required>
                 <option value="" selected>Year & Semester </option>
@@ -53,7 +56,7 @@
                         <td id="left">{{ result.3 }}</td>
                         <td>{{ result.4 }}</td>
                         <td id="zindex">
-                            <select autofocus class="form-select" name="s{{ result.0 }}" required>
+                            <select autofocus class="form-select" name="s{{result.0}}" required>
                                 <option selected value="">-</option>
                                 <option value="10">O</option>
                                 <option value="9">A+</option>
@@ -80,7 +83,9 @@
             <button type="submit" name="calculate">Calculate</button>
         </form>
     </div>
-    {{ alert }}
+    <p class="link-danger" style="margin-bottom: 0px; margin-top: 5px; font-weight: bold; font-size: 18px;">
+    {{ alert }}</p>
+    <p id="title" class="link-success" style="margin-bottom: 0px; margin-top: 5px;">{{alertsuccess}}</p>
     <p id="cgpa" style="display: none; display: {{ indi }} !important;">Semester Grade Point Average (SGPA) :
         <span>{{ sgpa }}</span> / 10</p>
     <div class="hide {{tvisibility}}">
