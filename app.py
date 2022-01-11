@@ -32,10 +32,7 @@ def home():
 
 @app.route('/register')
 def register():
-    if 'id' in session:
-        return redirect(url_for('dashboard'))
-    else:
-        return render_template('register.html')
+    return render_template('register.html')
 
 #--------------------------------------------------------------
 
@@ -78,10 +75,7 @@ def tnc():
 
 @app.route('/login')
 def login():
-    if 'id' in session:
-        return redirect(url_for('dashboard'))
-    else:
-        return render_template('login.html')
+    return render_template('login.html')
     
 #--------------------------------------------------------------
 
@@ -148,7 +142,7 @@ def dashboard():
             cursor.connection.commit()
             count = 0
             for i in range(8):
-                if account[i+2] != 0:
+                if account[i+3] != 0:
                     count = count + 1
             sum1 = sum(account[3:11])
             li = []
@@ -262,65 +256,67 @@ def calculate():
             account = cursor.fetchone()
             if not account:
                 cursor.execute("INSERT INTO GPARECORDS VALUES(NULL,% s,% s,0,0,0,0,0,0,0,0,0)",(uid,branch))
-            elif(branch != account[2]):
-                gpoints = []
-                alert = "Please make sure, 'branch' you've selected is correct !"
-                return render_template('calc-gpa.html',results=results,total=total,semtitle=text,gpoints=gpoints,indicator="block",alert=alert)
-            else:    
-                if sem==1:
-                    text="I Year - I Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE ONE= % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET ONE = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==2):
-                    text="I Year - II Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE TWO = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET TWO = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==3):
-                    text="II Year - I Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE THREE = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET THREE  = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==4):
-                    text="II Year - II Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE FOUR = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET FOUR  = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==5):
-                    text="III Year - I Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE FIVE = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET FIVE = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==6):
-                    text="III Year - II Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE SIX = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET SIX = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==7):
-                    text="IV Year - I Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE SEVEN = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET SEVEN = % s WHERE UID = % s",(sgpa,uid,))
-                elif(sem==8):
-                    text="IV Year - II Semester"
-                    cursor.execute("SELECT * FROM GPARECORDS WHERE EIGHT = % s AND UID = % s",(sgpa,uid,))
-                    acc = cursor.fetchone()
-                    if not acc:
-                        cursor.execute("UPDATE GPARECORDS SET EIGHT = % s WHERE UID = % s",(sgpa,uid,))  
-                cursor.connection.commit()
-                if(fail):
-                    alert = "SGPA is calculated excluding % s failed Subjects"%(fail,)
-                    alertsuccess = "Be prepared for Exams ! All the Best :) !"
-                    return render_template('calc-gpa.html',results=results,total=total,semtitle=text,tvisibility="block",indicator="block",indi="block",sgpa=sgpa,gpoints=gpoints,gpvalue=val,alert=alert,alertsuccess=alertsuccess)
-                return render_template('calc-gpa.html',results=results,total=total,semtitle=text,tvisibility="block",indicator="block",indi="block",sgpa=sgpa,gpoints=gpoints,gpvalue=val,alert=alert,alertsuccess="Congratulations !!")
+            if account:
+                if(branch != account[2]):
+                    gpoints = []
+                    alert = "Please make sure, 'branch' you've selected is correct !"
+                    return render_template('calc-gpa.html',results=results,total=total,semtitle=text,gpoints=gpoints,indicator="block",alert=alert)
+                else:
+                    pass;                
+            if sem==1:
+                text="I Year - I Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE ONE= % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET ONE = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==2):
+                text="I Year - II Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE TWO = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET TWO = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==3):
+                text="II Year - I Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE THREE = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET THREE  = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==4):
+                text="II Year - II Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE FOUR = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET FOUR  = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==5):
+                text="III Year - I Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE FIVE = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET FIVE = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==6):
+                text="III Year - II Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE SIX = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET SIX = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==7):
+                text="IV Year - I Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE SEVEN = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET SEVEN = % s WHERE UID = % s",(sgpa,uid,))
+            elif(sem==8):
+                text="IV Year - II Semester"
+                cursor.execute("SELECT * FROM GPARECORDS WHERE EIGHT = % s AND UID = % s",(sgpa,uid,))
+                acc = cursor.fetchone()
+                if not acc:
+                    cursor.execute("UPDATE GPARECORDS SET EIGHT = % s WHERE UID = % s",(sgpa,uid,))  
+            cursor.connection.commit()
+            if(fail):
+                alert = "SGPA is calculated excluding % s failed Subjects"%(fail,)
+                alertsuccess = "Be prepared for Exams ! All the Best :) !"
+                return render_template('calc-gpa.html',results=results,total=total,semtitle=text,tvisibility="block",indicator="block",indi="block",sgpa=sgpa,gpoints=gpoints,gpvalue=val,alert=alert,alertsuccess=alertsuccess)
+            return render_template('calc-gpa.html',results=results,total=total,semtitle=text,tvisibility="block",indicator="block",indi="block",sgpa=sgpa,gpoints=gpoints,gpvalue=val,alert=alert,alertsuccess="Congratulations !!")
     else:
         return redirect(url_for('login'))
 #--------------------------------------------------------------
