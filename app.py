@@ -52,9 +52,6 @@ def registerdata():
         if(user):
             alert = "You're already a member with email '%s'"%(email)
             flag=1
-        elif not re.match(r'[0-9]{2}[A-Za-z]{2}[0-9][A-Za-z]+0+[0-9][A-Za-z0-9][0-9]',rollno):
-            alert = "Invalid JNTUH rollno '%s'"%(rollno)
-            flag=1
         else:
             cursor.execute("INSERT INTO USERS VALUES(NULL,% s,% s,% s,% s)",(name,email,password,rollno))
             alert = "Congratulations!, Dear \"%s\" You've Successfully Registered."%(name)
