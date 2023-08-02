@@ -14,11 +14,16 @@ app.config['MYSQL_HOST'] = 'db4free.net'
 app.config['MYSQL_USER'] = 'gpacalc'
 app.config['MYSQL_PASSWORD'] = 'Candy@69'
 app.config['MYSQL_DB'] = 'gpacalc'
-"""
+
 app.config['MYSQL_HOST'] = 'remotemysql.com'
 app.config['MYSQL_USER'] = 'rVDdLPKZIw'
 app.config['MYSQL_PASSWORD'] = 'MOCryJTHA9'
 app.config['MYSQL_DB'] = 'rVDdLPKZIw'
+"""
+app.config['MYSQL_HOST'] = 'sql.freedb.tech'
+app.config['MYSQL_USER'] = 'freedb_jntuhgpacalc'
+app.config['MYSQL_PASSWORD'] = '9mgs89!DvWc#pNx'
+app.config['MYSQL_DB'] = 'freedb_jntuhgpacalc'
 
 mysql = MySQL(app)
 
